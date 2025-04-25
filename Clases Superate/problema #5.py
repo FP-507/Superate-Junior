@@ -1,4 +1,4 @@
-""" Escribe un programa y regrese el reverso de esa palabra, ademas qeu guarde cadda letra en una lista y se retorne al usuario"""
+""" Escribe un programa y regrese el reverso de esa palabra, ademas que guarde cada letra en una lista y se retorne al usuario"""
 
 def Reverso(palabra): 
     palabra_reverso = reversed(palabra)
@@ -7,4 +7,4 @@ def Reverso(palabra):
     print(palabra_reverso)
     print(list_palabra)
 
-Reverso("ojo")
+Reverso("mesa")
