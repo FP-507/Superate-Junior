@@ -9,7 +9,7 @@ class usuario:
                 self.__usuario = fila['usuario']
                 self.__saldo = fila['saldo']
     
-    def recibir(self, cant_recibida): 
+    def depositar(self, cant_recibida): 
         with open('cuenta_yappy.csv', 'a') as archivo:
             lector = csv.DictReader(archivo)
             for fila in lector:
@@ -33,5 +33,5 @@ class usuario:
                 if fila['usuario'] == self.__usuario: 
                     print(f'Usuario: {self.__usuario} \n Dinero: {self.__saldo}')
 
-        
 
+    
