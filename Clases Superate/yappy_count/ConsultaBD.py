@@ -34,6 +34,5 @@ class ConsultaBD:
 
              if not base_datos_real:
                     escritor.writeheader()
-
              escritor.writerow({'usuario': self.usuario, 'contrasena': self.contrasena, 'saldo': 0})
         print("Usuario registrado exitosamente.")
