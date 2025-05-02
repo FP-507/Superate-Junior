@@ -45,7 +45,7 @@ class ConsultaBD:
 
         for fila in filas:
             if fila['usuario'] == self.usuario:
-                fila['saldo'] = nuevo_saldo
+                fila['saldo'] += nuevo_saldo
 
         with open(self.archivo, 'w', newline='') as archivo:
             escritor = csv.DictWriter(archivo, fieldnames=filas[0].keys())
