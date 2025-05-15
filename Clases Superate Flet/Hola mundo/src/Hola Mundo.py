@@ -1,7 +1,8 @@
 import flet as ft
 
 def main(page: ft.Page):
-    page.title = "Mi primera app con Flet"
+    # Configuración de la página
+    page.title = "Hola Mundo"
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
 
     # Crear un campo de texto
