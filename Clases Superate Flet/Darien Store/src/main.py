@@ -11,10 +11,10 @@ def main(page: ft.Page):
     carrito = []
 
     productos = [
-        {"nombre": "Laptop HP", "imagen": "assets//laptopHP.jpg", "categoria": "Tecnología"},
-        {"nombre": "Audífonos JBL", "imagen": "assets//bocinaJBL.jpg", "categoria": "Tecnología"},
-        {"nombre": "Camisa Blanca", "imagen": "assets//camisaBlanca.jpg", "categoria": "Ropa"},
-        {"nombre": "Zapatos Deportivos", "imagen": "assets//zapatillasDeportivas.jpg", "categoria": "Ropa"},
+        {"nombre": "Laptop HP", "imagen": "Clases Superate Flet/Darien Store/src/assets/laptopHP.jpg", "categoria": "Tecnología"},
+        {"nombre": "Audífonos JBL", "imagen": "Clases Superate Flet/Darien Store/src/assets/bocinaJBL.jpg", "categoria": "Tecnología"},
+        {"nombre": "Camisa Blanca", "imagen": "Clases Superate Flet/Darien Store/src/assets/camisaBlanca.jpg", "categoria": "Ropa"},
+        {"nombre": "Zapatos Deportivos", "imagen": "Clases Superate Flet/Darien Store/src/assets/zapatillasDeportivas.jpg", "categoria": "Ropa"},
     ]
 
     filtro_categoria = ft.Dropdown(
@@ -39,7 +39,7 @@ def main(page: ft.Page):
         for p in productos:
             if texto in p["nombre"].lower() and (cat == "Todos" or p["categoria"] == cat):
                 lista_productos.controls.append(
-                    ft.Card(
+                    ft.Container(
                         content=ft.Row(
                             [
                                 ft.Image(src=p["imagen"], width=90, height=90),
@@ -47,7 +47,7 @@ def main(page: ft.Page):
                                 ft.Text(p["categoria"], size=16),
                                 ft.ElevatedButton(
                                     text="Agregar al carrito",
-                                    on_click=lambda e, producto=p: agregar_al_carrito(producto)
+                                    on_click=lambda e, producto=p["nombre"]: agregar_al_carrito(producto)
                                 )
                                 
                             ],
@@ -56,8 +56,16 @@ def main(page: ft.Page):
                         width=400,
                         height=100,
                         margin=10,
-                    )
-                )
+                        expand= True,
+                        border_radius=10,
+                         shadow=ft.BoxShadow(
+                            color=ft.Colors.BLACK26,
+                            blur_radius=10,
+                            spread_radius=1,
+                            offset=ft.Offset(0, 0),
+                            blur_style=ft.ShadowBlurStyle.OUTER
+                        ), 
+                ))
         page.update()
 
     def agregar_al_carrito(nombre):
